@@ -1,2 +1,2 @@
 # angular2
-angular2 learn 
+angular2学习笔记
