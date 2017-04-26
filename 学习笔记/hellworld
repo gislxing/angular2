@@ -1,0 +1,80 @@
+#### helloWorld
+    1、创建新项目
+        1、打开终端窗口，运行下列命令来生成一个新项目以及应用的骨架代码：
+            ng new my-app
+        2、编译项目，进入新项目所在目录并运行下列命令以编译项目：
+            cnpm install
+        3、进入项目目录，并启动服务器：
+            ng serve --open / cnpm start
+            使用--open（或-o）参数可以自动打开浏览器并访问http://localhost:4200/
+    2、编辑我们的第一个Angular组件：
+        1、CLI为我们创建了第一个Angular组件。 它就是名叫app-root的根组件。 你可以在./src/app/app.component.ts目录下找到它。
+        打开这个组件文件，并且把title属性从 app works! 改为 Hello World,
+        浏览器会自动刷新，而我们会看到修改之后的内容。
+        2、打开 src/app/app.component.css 并给这个组件设置一些样式：
+            h1 {
+                color: #369;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 250%;
+            }
+    3、项目文件概览
+        1、src文件夹
+            所有的Angular组件、模板、样式、图片以及你的应用所需的任何东西都在那里。 
+            这个文件夹之外的文件都是为构建应用提供支持用的。
+            1、app/app.component.{ts,html,css,spec.ts}
+                使用HTML模板、CSS样式和单元测试定义AppComponent组件。 
+                它是根组件，随着应用的成长它会成为一棵组件树的根节点。
+            2、app/app.module.ts	
+                定义AppModule，这个根模块会告诉Angular如何组装该应用。 
+                目前，它只声明了AppComponent。 稍后它还会声明更多组件。
+            3、assets/*	
+                这个文件夹下你可以放图片等任何东西，在构建应用时，它们全都会拷贝到发布包中。
+            4、environments/*	
+                这个文件夹中包括为各个目标环境准备的文件，它们导出了一些应用中要用到的配置变量。 
+                这些文件会在构建应用时被替换。 比如你可能在产品环境中使用不同的API端点地址，
+                或使用不同的统计Token参数。 甚至使用一些模拟服务。 所有这些，CLI都替你考虑到了。
+            5、favicon.ico	
+                每个网站都希望自己在书签栏中能好看一点。 请把它换成你自己的图标。
+            6、index.html	
+                这是别人访问你的网站的主页面的HTML文件。 大多数情况下你都不用编辑它。 
+                在构建应用时，CLI会自动把所有js和css文件添加进去，
+                所以你不必在这里手动添加任何 <script> 或 <link> 标签。
+            7、main.ts	
+                这是应用的主要入口点。 使用JIT compiler编译器编译本应用，
+                并启动应用的根模块AppModule，使其运行在浏览器中。 你还可以使用AOT compiler编译器，
+                而不用修改任何代码 —— 只要给ng build 或 ng serve 传入 --aot 参数就可以了。
+            8、polyfills.ts	
+                不同的浏览器对Web标准的支持程度也不同。 填充库（polyfill）能帮我们把这些不同点进行标准化。 
+                你只要使用core-js 和 zone.js通常就够了，不过你也可以查看浏览器支持指南以了解更多信息。
+            9、styles.css	
+                这里是你的全局样式。 大多数情况下，你会希望在组件中使用局部样式，以利于维护，
+                不过那些会影响你整个应用的样式你还是需要集中存放在这里。
+            10、test.ts	
+                这是单元测试的主要入口点。 它有一些你不熟悉的自定义配置，不过你并不需要编辑这里的任何东西。
+            11、tsconfig.{app|spec}.json	
+                TypeScript编译器的配置文件。tsconfig.app.json是为Angular应用准备的，
+                而tsconfig.spec.json是为单元测试准备的。
+        2、根目录
+            src/文件夹是项目的根文件夹之一。 其它文件是用来帮助你构建、测试、维护、文档化和发布应用的。它们放在根目录下，和src/平级。
+            1、e2e/	
+            在e2e/下是端到端（End-to-End）测试。 它们不在src/下，是因为端到端测试实际上和应用是相互独立的，它只适用于测试你的应用而已。 这也就是为什么它会拥有自己的tsconfig.json。
+            node_modules/	
+            Node.js创建了这个文件夹，并且把package.json中列举的所有第三方模块都放在其中。
+            .angular-cli.json	
+            Angular CLI的配置文件。 在这个文件中，我们可以设置一系列默认值，还可以配置项目编译时要包含的那些文件。 要了解更多，请参阅它的官方文档。
+            .editorconfig	
+            给你的编辑器看的一个简单配置文件，它用来确保参与你项目的每个人都具有基本的编辑器配置。 大多数的编辑器都支持.editorconfig文件，详情参见 http://editorconfig.org 。
+            .gitignore	
+            一个Git的配置文件，用来确保某些自动生成的文件不会被提交到源码控制系统中。
+            karma.conf.js	
+            给Karma的单元测试配置，当运行ng test时会用到它。
+            package.json	
+            npm配置文件，其中列出了项目使用到的第三方依赖包。 你还可以在这里添加自己的自定义脚本。
+            protractor.conf.js	
+            给Protractor使用的端到端测试配置文件，当运行ng e2e的时候会用到它。
+            README.md	
+            项目的基础文档，预先写入了CLI命令的信息。 别忘了用项目文档改进它，以便每个查看此仓库的人都能据此构建出你的应用。
+            tsconfig.json	
+            TypeScript编译器的配置，你的IDE会借助它来给你提供更好的帮助。
+            tslint.json	
+            给TSLint和Codelyzer用的配置信息，当运行ng lint时会用到。 Lint功能可以帮你保持代码风格的统一。
