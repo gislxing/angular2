@@ -1,0 +1,10 @@
+#### helloWorld
+    1、创建新项目
+        1、打开终端窗口，运行下列命令来生成一个新项目以及应用的骨架代码：
+            ng new my-app
+        2、编译项目，进入新项目所在目录并运行下列命令以编译项目：
+            cnpm install
+        3、进入项目目录，并启动服务器：
+            ng serve --open / cnpm start
+            使用--open（或-o）参数可以自动打开浏览器并访问http://localhost:4200/
+    2、编辑我们的第一个Angular组件：
