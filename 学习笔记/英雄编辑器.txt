@@ -40,4 +40,37 @@
                     <input value="{{hero.name}}" placeholder="name">
                 </div>
         5、双向绑定
-            
+            把模板中的英雄名字重构成为下面的样子：
+                <input [(ngModel)]="hero.name" placeholder="name">
+            [(ngModel)]是一个Angular语法，用与把hero.name绑定到输入框中。 
+            它的数据流是双向的：从属性到输入框，并且从输入框回到属性。
+            NgModel属于FormsModule模块
+            要使用该模块需要引入此模块，在app.module.ts文件中添加如下代码以便引入该模块：
+                import { FormsModule }   from '@angular/forms';
+            然后把FormsModule添加到@NgModule元数据的imports数组中：
+                @NgModule({
+                    imports: [
+                        BrowserModule,
+                        FormsModule // <-- import the FormsModule before binding with [(ngModel)]
+                    ],
+                    declarations: [
+                        AppComponent
+                    ],
+                    bootstrap: [ AppComponent ]
+                })
+        6、显示我们的英雄列表
+            先创建一个由十位英雄组成的数组：
+                const HEROES: Hero[] = [
+                    {id: 1, name: '张1'},
+                    {id: 2, name: '李2'},
+                    {id: 3, name: '王3'},
+                    {id: 4, name: '赵4'},
+                    {id: 5, name: '郭5'},
+                    {id: 6, name: '龚6'},
+                    {id: 7, name: '猪7'},
+                    {id: 8, name: '李8'},
+                    {id: 9, name: '李9'},
+                    {id: 10, name: '李10'}
+                ]
+            暴露英雄
+                
